@@ -53,7 +53,7 @@
 
         var opt = {
             margin: 0.4,
-            filename: 'Excavation-Trenching-Safety-Inspection.pdf',
+            filename: 'Fall-Protection-Equipment-Inspection.pdf',
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: {
                 scale: 2,
