@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fall Protection Equipment Inspection</title>
+
+<!-- PDF export library (only needed for the Download PDF button) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js"></script>
+<!-- Real .docx (Word) export library (only needed for the Download Word button) -->
+<script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- STICKY TOOLBAR (stays visible while scrolling) -->
+<div class="toolbar">
+    <span class="toolbar-title">Fall Protection Equipment Inspection</span>
+    <button class="btn btn-pdf" id="downloadPdfBtn" type="button">⬇ Download PDF</button>
+    <button class="btn btn-word" id="downloadWordBtn" type="button">⬇ Download Word</button>
+    <button class="btn btn-reset" type="reset" form="printable">↺ Reset Form</button>
+</div>
+
+<!-- PRINTABLE / EXPORTABLE FORM -->
+<form id="printable">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Fall Protection Equipment Inspection</h1>
+        <div class="header-info">
+            <div class="info-field">
+                <span class="info-label">Site/Project Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Inspection Date:</span>
+                <input type="date" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Equipment Owner/User:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Equipment ID/Tag #:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Inspection #:</span>
+                <input type="text" class="info-input" />
+            </div>
+        </div>
+    </div>
+
+    <!-- INFO BOX -->
+    <div class="info-box">
+        <div class="info-text">
+            <strong>OSHA Requirement (29 CFR 1926.501-503):</strong> Fall protection required for work at 6+ ft. Personal fall arrest systems must be inspected before each use. Defective equipment must be removed from service immediately.
+        </div>
+    </div>
+
+    <!-- STATUS SUMMARY (2 options: PASS / FAIL) -->
+    <div class="status-summary" style="grid-template-columns: 1fr 1fr;">
+        <label class="status-item">
+            <span class="radio-wrap-large">
+                <input type="radio" name="overall-status" value="Pass" class="radio-hidden" />
+                <span class="radio-box-large"></span>
+            </span>
+            <span class="checkbox-label">PASS - Safe to Use</span>
+        </label>
+        <label class="status-item">
+            <span class="radio-wrap-large">
+                <input type="radio" name="overall-status" value="Fail" class="radio-hidden" />
+                <span class="radio-box-large"></span>
+            </span>
+            <span class="checkbox-label">FAIL - Remove from Service</span>
+        </label>
+    </div>
+
+    <!-- SECTION 1: FULL-BODY HARNESS INSPECTION -->
+    <h2>1. Full-Body Harness Inspection</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Webbing free of cuts, tears, abrasions, or fraying</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-1" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-1" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-1" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">No burns, chemical damage, or discoloration in webbing</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-2" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-2" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-2" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">D-ring intact, no cracks, bending, or distortion</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-3" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-3" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-3" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Buckles function properly, no sharp edges or deformation</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-4" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-4" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-4" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Stitching intact, no loose or broken threads</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-5" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-5" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-5" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Identification tag present and legible (manufacturer, date, model)</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-6" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-6" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-6" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: LANYARD/SHOCK ABSORBER INSPECTION -->
+    <h2>2. Lanyard/Shock Absorber Inspection</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Lanyard webbing/rope free from damage or wear</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-7" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-7" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-7" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Snap hooks operate smoothly, locking mechanism works properly</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-8" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-8" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-8" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Shock absorber pack intact (not deployed or damaged)</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-9" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-9" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-9" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">No corrosion, pitting, or damage to metal components</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-10" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-10" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-10" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: SELF-RETRACTING LIFELINE (SRL) -->
+    <h2>3. Self-Retracting Lifeline (SRL) - If Applicable</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">SRL cable/webbing retracts smoothly without binding</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-11" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-11" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-11" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Housing intact, no cracks or damage</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-12" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-12" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-12" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Swivel operates freely</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-13" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-13" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-13" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: ANCHORAGE POINTS -->
+    <h2>4. Anchorage Points (If Fixed/Installed)</h2>
+    <div class="checklist-section">
+        <div class="checklist-item">
+            <div class="item-text">Anchor capable of supporting 5,000 lbs per person attached</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-14" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-14" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-14" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Anchorage securely attached to structure</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-15" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-15" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-15" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="item-text">Anchorage positioned to prevent swing fall hazards</div>
+            <div class="checkbox-container">
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-16" value="OK" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">OK</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-16" value="Issue" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">Issue</span></label>
+                <label class="checkbox-option"><span class="radio-wrap-small"><input type="radio" name="item-16" value="N/A" class="radio-hidden" /><span class="radio-box-small"></span></span><span class="checkbox-option-label">N/A</span></label>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALERT BOX -->
+    <div class="alert-box">
+        <div class="alert-text">⚠ CRITICAL: Equipment that has been subjected to fall arrest (fall occurred) must be immediately removed from service and destroyed or sent for manufacturer inspection.</div>
+    </div>
+
+    <!-- OBSERVATIONS & NOTES -->
+    <div class="notes-section">
+        <h3>Deficiencies Found & Action Taken</h3>
+        <textarea class="notes-area" placeholder="Document any deficiencies, equipment removed from service, or corrective actions..."></textarea>
+    </div>
+
+    <!-- SIGNATURE SECTION -->
+    <div class="signature-section">
+        <div class="signature-box">
+            <span class="signature-label">Inspector Signature:</span>
+            <div class="signature-line"></div>
+            <div class="info-field" style="margin-top: 12pt;">
+                <span class="info-label">Print Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Date:</span>
+                <input type="date" class="info-input" />
+            </div>
+        </div>
+        <div class="signature-box">
+            <span class="signature-label">Competent Person Review:</span>
+            <div class="signature-line"></div>
+            <div class="info-field" style="margin-top: 12pt;">
+                <span class="info-label">Print Name:</span>
+                <input type="text" class="info-input" />
+            </div>
+            <div class="info-field">
+                <span class="info-label">Date:</span>
+                <input type="date" class="info-input" />
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-grid">
+            <div>Page 1 of 1</div>
+            <div>Fall Protection Equipment Inspection</div>
+            <div>Version 1.0 - 2026</div>
+        </div>
+        <div style="margin-top: 8pt; font-size: 7pt;">
+            Aligned with OSHA 29 CFR 1926.501-503 - Fall Protection. Inspect personal fall arrest systems before each use. Remove defective equipment immediately. This form is a documentation tool - verify current OSHA requirements at www.osha.gov.
+        </div>
+    </div>
+
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
