@@ -60,7 +60,7 @@
     </div>
 
     <!-- STATUS SUMMARY (2 options: PASS / FAIL) -->
-    <div class="status-summary" style="grid-template-columns: 1fr 1fr;">
+        <div class="status-summary">
         <label class="status-item">
             <span class="radio-wrap-large">
                 <input type="radio" name="overall-status" value="Pass" class="radio-hidden" />
@@ -75,7 +75,11 @@
             </span>
             <span class="checkbox-label">FAIL - Remove from Service</span>
         </label>
-    </div>
+        <div class="status-item">
+            <span class="checkbox-label" style="font-weight: normal;">Inspection #:</span>
+            <input type="date" class="info-input" style="width: auto; display: inline-block; margin-inline-start: 8pt;" />
+        </div>
+        </div>
 
     <!-- SECTION 1: FULL-BODY HARNESS INSPECTION -->
     <h2>1. Full-Body Harness Inspection</h2>
